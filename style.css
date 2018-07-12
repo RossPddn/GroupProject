@@ -1,12 +1,22 @@
 #chatbox{
+    
 
     height:80vh;
     width:100%;
-    background-color:red;
+  border-style:outset;
+  border-color:black;
+  border-width:2px;
+    
 
 }
 #wagerBar{
     margin-bottom:10vh;
+}
+#wagerBar div{
+    color:white;
+    font-family: 'Slabo 27px', 'PT Sans', 'Roboto Slab';
+    font-weight:bold;
+    font-size:1em;
 }
 #heads, #tails{
     
@@ -37,6 +47,9 @@ body{
 
 
 
-@media only screen and (max-width: 600px) {
-   
+@media only screen and (max-width: 765px) {
+   #chatbox{
+    height:25vh;
+
+   }
 }
