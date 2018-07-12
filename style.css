@@ -6,17 +6,22 @@
   border-style:outset;
   border-color:black;
   border-width:2px;
+  
     
 
 }
 #wagerBar{
     margin-bottom:10vh;
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
 }
 #wagerBar div{
-    color:white;
+    color:black;
     font-family: 'Slabo 27px', 'PT Sans', 'Roboto Slab';
     font-weight:bold;
     font-size:1em;
+  
 }
 #heads, #tails{
     
