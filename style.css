@@ -1,0 +1,42 @@
+#chatbox{
+
+    height:80vh;
+    width:100%;
+    background-color:red;
+
+}
+#wagerBar{
+    margin-bottom:10vh;
+}
+#heads, #tails{
+    
+    border-radius:50%;
+    align-self:center;
+    height:100px;
+    width:100px;
+
+
+}
+#gameRules{
+
+margin-top:5px;
+margin-left:10vw;
+
+}
+
+
+body{
+    background-color:#625E5E;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+   
+}
