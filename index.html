@@ -10,6 +10,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 <link href="https://fonts.googleapis.com/css?family=PT+Sans|Roboto+Slab|Slabo+27px" rel="stylesheet">
+<!-- <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script src="assets/javascript/game.js"></script> -->
 
 </head>
 
@@ -76,7 +78,7 @@
             
             <div class="row">
                 <div class="col-sm-4">Balance: <span id='balance'></span></div>
-                <div class="col-sm-6">Enter Wager: <span><input id="wagerIn"></span></div>
+                <div class="col-sm-6">Enter Wager: <span><form><input id="wagerIn"> <button id="btn">GO!</button></form></span></div>
                 <div class="col-sm-2">Time To Flip: <span id='flipTimer'></span></div>
             </div>
         </div>
@@ -84,16 +86,16 @@
         <div class="container" >
             
                 <div class="row">
-                    <div class="col-sm-4"><div id='chatbox'>Chat Box</div></div>
+                    <div id='test' class="col-sm-4"><div id='chatbox'><div>useres online: <span id='online'> </span></div>Chat Box</div></div>
                     <div class="col-sm-2"><img src="https://images.alphacoders.com/882/882298.jpg" id='heads'></div>
-                    <div class="col-sm-4"><div id='gameBox'>Game Box</div></div>
+                    <div class="col-sm-4"><div id='gameBox'><div id="image"><img class="images" src=""></div></div></div>
                     <div class="col-sm-2"><img src='https://wallpapercave.com/wp/a86CfEx.jpg' id='tails'></div>
                 </div>
             </div>
             <div class='row'>
                 <div class="col-sm-4"></div>
 
-              <div class="col-sm-4"><div id='historyBox'>History</div></div>
+              <div class="col-sm-4"><div id='pastResults'>History</div></div>
               <div class="col-sm-4"></div>
 
 
@@ -112,6 +114,8 @@
 
 <!-- Bootstrap's javascript file that allows the dropdown menu to work  -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+<script src="assets/javascript/game.js"></script>
 
 
 </html>

@@ -65,7 +65,7 @@ span{
     text-decoration: underline;
 
 }
-#historyBox{
+#pastresults{
     border-style:solid;
     border-width:1px;
     color:red;
@@ -74,6 +74,18 @@ span{
 
 
 }
+#chatbox, #online{
+    border-bottom:solid;
+    border-color:white;
+    font-family: 'Slabo 27px', 'PT Sans', 'Roboto Slab';
+    font-weight:bold;
+    font-size:1em;
+    padding:2px;
+    color:white;
+
+
+}
+
 
 
 
