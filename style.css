@@ -65,6 +65,15 @@ span{
     text-decoration: underline;
 
 }
+#historyBox{
+    border-style:solid;
+    border-width:1px;
+    color:red;
+    height:10vh;
+    width:15vw;
+
+
+}
 
 
 
