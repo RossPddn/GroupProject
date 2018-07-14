@@ -41,3 +41,92 @@ connectedRef.on("value", function(snap) {
     // The number of online users is the number of children in the connections list.
     $("#online").text(snap.numChildren());
   });
+  var baseTime 		 = "1531389600"; // subtract this by the Date.now() and the % to get remainder.
+	var clearDiv 		 = 0;
+	var pastResultsArray = [];
+	var currentUrl		 = '';
+	var timerStart		 = 5;	// this variable will dictate how long the timer will last 
+	var flipTimer;
+
+	// keeps track of the clearDiv by storing the value in Firebase's Database
+	// the purpose of this is to make sure the div doesn't get too big.
+	// so when clearDiv variable goes past 10, we will clear the div.
+	database.ref("/pastResultsCounter").on("value", function(snapshot) {
+		
+		clearDiv = snapshot.val().resultContainer;
+
+	});
+
+	database.ref("/pastResultsCounter").on("value", function(snapshot) {
+
+		pastResultsArray = snapshot.val().pastResultsArray;
+		
+		$('#pastResults').text('');
+		
+		for (var i = 0; i < pastResultsArray.length; i++) {
+			var p = $('<p>').text(pastResultsArray[i]);
+			$('#pastResults').append(p);
+		}
+
+		$('.images').attr('src', snapshot.val().imgUrl);
+
+	});
+
+	database.ref('/globalTimer').on('value', function(snapshot) {
+
+		globalTimer = snapshot
+	})
+
+	// this function flips coin and randomizes which will be displayed depending 
+	// on the randomization.
+
+	function flipCoin() {
+        
+		var random = Math.floor(Math.random() * 2);
+
+		if (random == 0) {
+			
+			$('.images').attr('src', 'http://random-ize.com/coin-flip/us-quarter/us-quarter-front.jpg');
+			$('#pastResults').append('Heads');
+			
+			pastResultsArray.push('Heads');
+			clearDiv++;
+			
+			database.ref("/pastResultsCounter").set({
+        		resultContainer: clearDiv,
+        		pastResultsArray,
+        		imgUrl: 'http://random-ize.com/coin-flip/us-quarter/us-quarter-front.jpg'
+     		});
+		
+		} else if (random == 1) {
+			
+			$('.images').attr('src', 'http://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg');
+			$('#pastResults').append('Tails');
+			pastResultsArray.push('Tails');
+			clearDiv++;
+
+			database.ref("/pastResultsCounter").set({
+        		resultContainer: clearDiv,
+        		pastResultsArray,
+        		imgUrl: 'http://random-ize.com/coin-flip/us-quarter/us-quarter-back.jpg'
+     		});
+		}
+	}
+
+			// when user clicks button run the game
+	$(document).on('click','#btn',function() {
+        event.preventDefault();
+		// evertime userclicks, make a new random
+		// get user choice 
+
+		// clearDiv is used to clear pastResults div when it get's too full
+		if(clearDiv > 10) {
+
+			$('#pastResults').text('');
+			clearDiv = 0;
+			pastResultsArray = [];
+
+		}
+		
+		flipCoin();
+	});
