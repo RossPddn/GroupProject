@@ -6,7 +6,9 @@
   border-style:outset;
   border-color:black;
   border-width:2px;
+  margin-left:-20px;
   
+ 
     
 
 }
@@ -17,10 +19,11 @@
     border-color:black;
 }
 #wagerBar div{
-    color:black;
+    color:white;
     font-family: 'Slabo 27px', 'PT Sans', 'Roboto Slab';
     font-weight:bold;
     font-size:1em;
+    padding:2px;
   
 }
 #heads, #tails{
@@ -41,7 +44,15 @@ margin-left:10vw;
 
 
 body{
-    background-color:#625E5E;
+ 
+    
+    background-image:url('images/master_yoda_star_wars-wallpaper-1920x1200.jpg');
+    background-size:cover;
+}
+#background-color-div{
+
+    background-color:rgba(87, 89, 114, 0.589);
+
 }
 #gameBox{
     height:50vh;
@@ -50,7 +61,10 @@ body{
     border-width:1px;
     border-color:black;
 }
+span{
+    text-decoration: underline;
 
+}
 
 
 
